@@ -1,0 +1,210 @@
+<style>
+ .entireTallyVotePage:before{
+            content: '';
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            background-image:url('./vote.webp');
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            -webkit-filter: blur(2px);
+            -moz-filter: blur(2px);
+            -o-filter: blur(2px);
+            -ms-filter: blur(2px);
+            filter: blur(2px);
+        }
+
+        .tallyVoteButtons
+        {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 400px;
+            height: 500px;
+            padding: 80px 40px;
+            box-sizing: border-box;
+            background: rgba(0,0,0,.5);
+            zoom: 80%;
+        }
+        
+        .tallyVoteButtons h2 {
+            
+            margin-top: -40px;
+            margin-bottom: 5px;
+            color: #fff;
+            text-align: center;   
+        }
+
+        .tallyVoteButtons p
+        {
+            margin-bottom:10px;
+            margin-left: 80px;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #fff;
+        }
+        .tallyVoteButtons marquee
+        {
+            margin-top: 10px;
+            padding: 0;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .listOfTallyVoteButtons {
+            left: auto;
+            box-sizing: content-box;
+            margin-top: 20px;
+            margin-left: 20px;
+            
+        }
+
+        .listOfTallyVoteButtons button{
+            height: 40px;
+            color: #fff;
+            font-size: 15px;
+            background: green;
+            cursor: pointer;
+            border-radius: 25px;
+            border: none;
+            outline: none;
+            margin-top: 5%;
+            margin-left:50px;
+        }
+
+        
+
+        .listOfTallyVoteButtons button:hover{
+             
+            background: orange;
+           
+        }
+
+        .llistOfTallyVoteButtons button:active{
+            background-color: #3e8e41;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+
+        .tallyVoteSignOutButton button{
+            height: 40px;
+            color: #fff;
+            font-size: 15px;
+            background: orange;
+            cursor: pointer;
+            border-radius: 25px;
+            border: none;
+            outline: none;
+            margin-top: 5px;
+            margin-left:55px;
+        }
+
+        .tallyVoteMainMenuButton button{
+            height: 40px;
+            color: #fff;
+            font-size: 15px;
+            background: green;
+            cursor: pointer;
+            border-radius: 25px;
+            border: none;
+            outline: none;
+            margin-top: 5px;
+            margin-left:100px;
+        }
+
+        .tallyVoteSignOutButton button:active{
+            background-color: red;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+
+
+        .tallyVoteSignOutButton{
+            margin-left: 55px;
+        }
+
+        .tallyVoteSignOutButton button:hover{
+
+            background: #FF0001;
+        }
+        
+        .presidentialResultsTable table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 10px;
+        padding-bottom: 5px;
+        text-align: center;
+        color: white;
+        font-weight: bold;
+        margin-bottom: 1px;
+        margin-left: 20px;
+    }
+    
+     .presidentialResultsTable table tr:nth-child(even){
+        background-color: green;
+    }
+    .presidentialResultsTable table tr:nth-child(odd){
+        background-color: #b3ffb3;
+    } 
+    
+    .senatorialResultsTable table, th, td{
+        margin-left: 20px;
+        margin-top: 10px;
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 5px;
+        padding-bottom: 1px;
+        text-align: center;
+        color: black;
+        font-weight: bold;
+    }
+
+    .senatorialResultsTable caption{
+        color: white;
+    }
+
+    .senatorialResultsTable table tr:nth-child(even){
+        background-color: orange;
+    }
+    
+    .senatorialResultsTable table tr:nth-child(odd){
+        background-color: #ffd699;
+    }
+</style>
+<div class="entireTallyVotePage">
+        <div class="tallyVoteButtons">
+            <h2>Welcome, ...</h2>
+            <p>Ballot Tallying has been completed successful.</p>
+            <br>
+            <p>Presidential Campaign</p>
+            <p>APC: {{presidentialAPC}}</p>
+            <p>PDP: {{presidentialPDP}}</p>
+            <p>APGA: {{presidentialAPGA}}</p>
+            <br>
+            <p>Senatorial Campaign</p>
+            <p>APC: {{senatorialAPC}}</p>
+            <p>PDP: {{senatorialPDP}}</p>
+            <p>APGA: {{senatorialAPGA}}</p>
+
+            
+            <form action=" " method="GET">
+                <div class="listOfCampaignButtons">
+                    
+                    <div class="tallyVoteMainMenuButton">
+                    <button type="submit"  formaction="/adminPage">Main Menu</button>
+                    </div>
+                   
+                    <div class="tallyVoteSignOutButton" >
+                    <button type="submit" formaction="/adminLogout">Sign Out</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>

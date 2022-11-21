@@ -1,0 +1,210 @@
+<style>
+
+        .voterNumber input {
+        font-size:  20px; 
+        height:  36px; 
+        border:  5px solid orange;
+        text-align: center;
+        background:  #ffffff; 
+        width:  100px; 
+        box-sizing:  border-box; 
+        transition:  all .3s linear; 
+        color:  #000; 
+        font-weight:  400;
+        -webkit-appearance:  none; 
+        
+        }
+
+
+    .entireAdminPage:before{
+            content: '';
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+
+            background-image:url('bitTest.webp');
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            -webkit-filter: blur(2px);
+            -moz-filter: blur(2px);
+            -o-filter: blur(2px);
+            -ms-filter: blur(2px);
+            filter: blur(2px);
+        }
+        .adminOptionsButtons
+        {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 400px;
+            height: 500px;
+            padding: 80px 40px;
+            box-sizing: border-box;
+            background: rgba(0,0,0,.5);
+        }
+        
+        .adminOptionsButtons h2 {
+            
+            margin-top: -80px;
+            margin-bottom: 10px;
+            color: #fff;
+            text-align: center;   
+        }
+        .adminOptionsButtons p
+        {
+            margin: 0px;
+            padding: 0;
+            font-weight: bold;
+            color: #fff;
+        }
+        
+        .listOfButtons {
+            left: auto;
+            box-sizing: content-box;
+            margin-top: 20px;
+            margin-left: 20px;
+            
+        }
+
+        .listOfButtons button{
+            height: 40px;
+            color: #fff;
+            font-size: 15px;
+            background: green;
+            cursor: pointer;
+            border-radius: 25px;
+            border: none;
+            outline: none;
+            margin-top: 5%;
+            margin-left:50px;
+        }
+
+        
+
+        .listOfButtons button:hover{
+             
+            background: orange;
+           
+        }
+
+        .listOfButtons button:active{
+            background-color: #3e8e41;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+
+        .adminSignOutButton button{
+            height: 40px;
+            color: #fff;
+            font-size: 15px;
+            background: red;
+            cursor: pointer;
+            border-radius: 25px;
+            border: none;
+            outline: none;
+            margin-top: 5%;
+            margin-left:70px;
+        }
+
+        .adminSignOutButton button:active{
+            background-color: red;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+
+        .adminNewCampaignButton button{
+                margin-left: 69px;
+        }
+
+        .adminExistingCampaignButton{
+            margin-left: -20px;
+        }
+
+        .adminTallyButton{
+            margin-left: 35px;
+        }
+
+        .adminStopCampaignButton{
+            margin-left: 20px;
+        }
+
+        .adminSignOutButton{
+            margin-left: 23px;
+        }
+
+        .adminSignOutButton button:hover{
+
+            background: #FF0001;
+        }
+
+        marquee {
+            color: orange;
+            font-weight: bold;
+        }
+
+        #clearButton{
+            background-color: #d4793a;
+        }
+
+         #clearButton:hover{
+            background-color: red;
+        }
+
+</style>
+<div class="entireAdminPage">
+<div class="adminOptionsButtons">
+
+            <h2>Welcome, <b style="color: orange;">{{user}}</b></h2>
+            
+            
+            <marquee style="text-align: center;" behavior="scroll" scrollamount="1"  height="30px" direction="down">Kindly note the following.</marquee>
+
+          
+            <br/>
+            <p>1. Enter the number of voters vote to be generated  <b style="color: orange;">in the box below.</b> </p>
+            
+            <br/>
+            <p>2. Click on <b style="color: orange;">Generate</b> to generate the votes for the number of voters entered.</p>
+            <br/>
+            
+            <p>3. Click on <b style="color: orange;">Clear Previous Ballots</b> to delete previously generated ballots(if any) from the chain</p>
+            
+
+<form action="/bitGenerateBallots" method="POST">
+        
+        <div class = "bitButtonAndInput">
+           
+        </div>
+
+         <div class="listOfButtons">
+           <div class="adminNewCampaignButton">
+                    
+        
+        <div class="voterNumber">
+        <label for="numberofvoters" style='color:orange;'><b>Number of Voters: </b></label>
+        <input name="numberofvoters" type="number" id="myNumber" required>
+        </div>
+        <button id="numberofvoters" style='margin-left:90px' type="submit" formaction="/bitGenerateBallots"><b>Generate</b></button>
+        </div>
+
+                    
+                   
+
+                    
+                </div>
+            </form>
+
+            <div class="listOfButtons">
+            <div class="adminSignOutButton" >
+                <form action="">
+                <button method="GET" formaction="/bitTestClear" type="submit" id="clearButton" style="margin-top:-22px; margin-bottom:24px; margin-left:28px" ><b>Clear Previous Ballots</b></button>
+
+                <button type="submit" style="margin-top: -28px;"  formaction="/bitadminLogout" method="GET"><b>Sign Out</b></button>
+                </form>
+                    </div>
+            </div>
+        </div>
+    </div>

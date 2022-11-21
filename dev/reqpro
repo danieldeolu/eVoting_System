@@ -1,0 +1,27 @@
+        const requestPromises = [];
+        let reqLocation  = req.protocol +"://"+req.get('host') 
+        console.log(reqLocation)
+        const requestOptions = {
+            uri : reqLocation + "/registrationConfirm", 
+            method : "POST", 
+            body : {
+                id : req.body.id, 
+                name: req.body.name,
+                password: req.body.password, 
+                email: req.body.email
+            }, 
+            json : true
+        };
+
+    try {
+        requestPromises.push(rp(requestOptions));
+
+        Promise.all(requestPromises).then(data =>{
+             res.send('User added successfully.');
+        })
+    }
+        catch(error){
+            console.log(error);
+        }
+        
+    }

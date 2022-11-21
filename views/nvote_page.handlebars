@@ -1,0 +1,317 @@
+
+<style>
+   .entireSelectCandidatePage:before{
+            content: '';
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            background-image:url('candidateSelect.webp');
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            -webkit-filter: blur(1px);
+            -moz-filter: blur(1px);
+            -o-filter: blur(1px);
+            -ms-filter: blur(1px);
+            filter: blur(1px);
+        }
+     
+
+        .selectCandidate{
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 400px;
+            height: 550px;
+            padding: 80px 40px;
+            box-sizing: border-box;
+            background: rgba(0,0,0,.5);
+            zoom: 70%;
+        }
+
+        .presidentialCandidateDiv{
+            left: auto;
+            box-sizing: content-box;
+            background-color: #645e3e;
+            border: 1px solid brown;
+            margin-bottom: 1px;
+            border-radius: 12px 12px 12px 12px;
+            width: 100%;
+
+        }
+
+
+        .senatorialCandidate{
+            
+            left: auto;
+            box-sizing:content-box;
+            background:#645e3e ;
+            border: 1px solid brown;
+            border-radius: 12px 12px 12px 12px;
+        }
+    
+        .selectCandidate h1{
+            margin-top:auto;
+            color: white;
+            margin-left: 40px;
+        }
+
+        .selectCandidate h2{
+            margin-top: 2px;
+            color: white
+        }
+
+        .selectCandidate span{
+            color: #ffe066
+        }
+        .presidentialCandidate input{
+            color: white;
+        }
+
+        .presidentialCandidate h1{
+            color: white;
+            margin-left: 30px;
+        }
+
+        .presidentialCandidate h2{
+            color: white;
+            margin-left:15px;
+            margin-bottom: 25px;
+        }
+
+        .selectCandidate label{
+            color: white;
+        }
+
+        .senatorialCandidate h2{
+            color: white;
+            margin-left: 20px;
+            margin-bottom: 25px;
+        }
+
+        .presidentialCandidate input{
+            color: white;
+            margin-left: 42px;
+            margin-bottom: 12px;
+        }
+
+        .senatorialCandidate input{
+            color: white;
+            margin-left: 42px;
+            margin-bottom: 12px;
+        }
+
+        .senatorialCandidate label{
+            color: white;
+            margin-bottom: 12px;
+        }
+        
+        .submitBallot button{
+            margin-top: 20px;
+            margin-left: 75px;
+            color: white;
+            background-color:#004d26;
+            border-radius: 15px;
+            text-shadow: yellow;
+            font-size: 25px;
+        }
+
+        .submitBallot button:hover{
+            background: orange;
+            cursor:pointer;
+        }
+
+        .noVoteLogout button {
+            margin-top: 20px;
+            margin-left: 120px;
+            color: white;
+            background-color:#004d26;
+            border-radius: 25px;
+            text-shadow: yellow;
+            font-size: 20px;
+        }  
+
+        .noVoteLogout button:hover {
+            background: red;
+            cursor:pointer;
+        }
+        * {
+  outline: 0;
+  font-family: sans-serif
+}
+body {
+  background-color: #fafafa
+}
+span.msg,
+span.choose {
+  color: #555;
+  padding: 5px 0 10px;
+  display: inherit
+}
+.container {
+  width: 500px;
+  margin: 50px auto 0;
+  text-align: center
+}
+
+*, 
+*::before,
+*::after {
+    box-sizing: border-box
+}
+    select {
+  
+  appearance: none;
+  
+  background-color: transparent;
+  border: none;
+  padding: 0 1em 0 0;
+  margin: 0;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+}
+    
+select::-ms-expand {
+  display: none;
+}
+
+    .select {
+        width: 100%;
+        min-width: 15ch;
+        max-width: 30ch;
+        border: 3px solid indianred;
+        border-radius: 0.25em;
+        padding: 0.25em 0.5em;
+        font-size: 1.25rem;
+        cursor: pointer;
+        line-height: 1.1;
+        background-color: #fff;
+        background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+  
+    }
+
+    #presidentialSelect:hover {
+        
+        border: 2px solid orange;
+        border-color: orange;
+    }
+
+     #senatorialSelect:hover {
+        
+        border: 2px solid purple;
+        border-color: orange;
+    }
+
+ 
+
+
+
+.select{
+    margin-top: -10px;
+    
+}
+
+         .submitBallot button{
+            margin-top: 20px;
+            margin-left: 75px;
+            color: white;
+            background-color:#004d26;
+            border-radius: 15px;
+            text-shadow: yellow;
+            font-size: 25px;
+        }
+
+        .submitBallot button:hover{
+            background: orange;
+            cursor:pointer;
+        }
+        
+</style>
+
+<div class= 'entireSelectCandidatePage'>
+    <div class="selectCandidate">
+
+<h2> Hey <span>{{id}}</span>, select a candidate from each campaign</h2>
+
+<form action="/votetest" method="POST">
+<div class="presidentialCandidateDiv">
+            <h2>Presidential Campaign</h2>
+          <div id="dropdown">
+            
+           
+            <div class="select">
+            <select  name="presidentialCandidate" id="presidentialSelect" required>
+                <option value="" selected disabled hidden>Click here to select an option</option>
+                 <option value="Accord Party (AP)">Accord Party (AP)</option>
+                <option value="Action Alliance (AA)">Action Alliance (AA)</option>
+                <option value="Action Democratic Party (ADP)">Action Democratic Party (ADP)</option>
+                <option value="Action Peoples Party (APP)">Action Peoples Party (APP)</option>
+                <option value="All Progressives Congress (APC)">All Progressives Congress (APC)</option>
+                <option value="All Progressives Grand Alliance (APGA)">All Progressives Grand Alliance (APGA)</option>
+                <option value="Boot Party (BP)">Boot Party (BP)</option>
+                <option value="KOWA Party (KP)">KOWA Party (KP)</option>
+                <option value="Labour Party (LP)">Labour Party (LP)</option>
+                <option value="National Rescue Movement (NRM)">National Rescue Movement (NRM)</option>
+                <option value="New Nigeria Peoples Party (NNPP)">New Nigeria Peoples Party (NNPP)</option>
+                <option value="Peoples Democratic Party (PDP)">Peoples Democratic Party (PDP)</option>
+                <option value="Peoples Redemption Party (PRP)">Peoples Redemption Party (PRP)</option>
+                <option value="Social Democratic Party (SDP)">Social Democratic Party (SDP)</option>
+                <option value="Young Progressive Party (YPP)">Young Progressive Party (YPP)</option>
+                <option value="Zenith Labour Party (ZLP)">Zenith Labour Party (ZLP)</option>
+            </select>
+            <span class="focus"></span>
+         </div>
+         </div>
+         <br>
+         <br>
+   </div>
+    <br>
+    <br>
+    <br>
+     <div class="senatorialCandidate">
+            <h2>Senatorial Campaign</h2>
+          <div id="dropdown">
+            
+           
+            <div class="select">
+            <select name="senatorialCandidate" id="senatorialSelect" required> 
+                
+                <option value="" selected disabled hidden>Click here to select an option</option>
+                <option value="Accord Party (AP)">Accord Party (AP)</option>
+                <option value="Action Alliance (AA)">Action Alliance (AA)</option>
+                <option value="Action Democratic Party (ADP)">Action Democratic Party (ADP)</option>
+                <option value="Action Peoples Party (APP)">Action Peoples Party (APP)</option>
+                <option value="All Progressives Congress (APC)">All Progressives Congress (APC)</option>
+                <option value="All Progressives Grand Alliance (APGA)">All Progressives Grand Alliance (APGA)</option>
+                <option value="Boot Party (BP)">Boot Party (BP)</option>
+                <option value="KOWA Party (KP)">KOWA Party (KP)</option>
+                <option value="Labour Party (LP)">Labour Party (LP)</option>
+                <option value="National Rescue Movement (NRM)">National Rescue Movement (NRM)</option>
+                <option value="New Nigeria Peoples Party (NNPP)">New Nigeria Peoples Party (NNPP)</option>
+                <option value="Peoples Democratic Party (PDP)">Peoples Democratic Party (PDP)</option>
+                <option value="Peoples Redemption Party (PRP)">Peoples Redemption Party (PRP)</option>
+                <option value="Social Democratic Party (SDP)">Social Democratic Party (SDP)</option>
+                <option value="Young Progressive Party (YPP)">Young Progressive Party (YPP)</option>
+                <option value="Zenith Labour Party (ZLP)">Zenith Labour Party (ZLP)</option>
+            </select>
+            <span class="focus"></span>
+         </div>
+         </div>
+         <br>
+         <br>
+   </div>
+     <div class="submitBallot">
+            <button type="submit">Cast my Ballot</button>
+     </div>
+     {{!-- <div class="noVoteLogout">
+            <button type="submit" formaction="/noVoteLogout">Logout</button> --}}
+     </div>
+   </form>
+    </div>
+</div>

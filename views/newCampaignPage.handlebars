@@ -1,0 +1,1206 @@
+ <style>
+    body{
+            margin: 0;
+            padding: 0;
+        }
+
+
+        {{!-- Define some css for the stop vote handlebars page --}}
+
+                .entireContinueNewCampaignPage1:before{
+                    content: '';
+                    position: fixed;
+                    width: 100vw;
+                    height: 100vh;
+                    background-image:url('./vote.webp');
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                    background-attachment: fixed;
+                    background-size: cover;
+                    -webkit-filter: blur(2px);
+                    -moz-filter: blur(2px);
+                    -o-filter: blur(2px);
+                    -ms-filter: blur(2px);
+                    filter: blur(2px);
+                }
+
+                .campaignOptionsButtons1
+                {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%,-50%);
+                    width: 400px;
+                    height: 500px;
+                    padding: 80px 40px;
+                    box-sizing: border-box;
+                    background: rgba(0,0,0,.5);
+                }
+                
+                .campaignOptionsButtons1 h2 {
+                    
+                    margin-top: 40px;
+                    margin-bottom: 10px;
+                    color: #fff;
+                    text-align: center;   
+                }
+                .campaignOptionsButtons1 p
+                {
+                    margin: 0px;
+                    padding: 0;
+                    font-weight: bold;
+                    color: #fff;
+                }
+                .campaignOptionsButtons1 marquee
+                {
+                    margin-top: 10px;
+                    padding: 0;
+                    font-weight: bold;
+                    color: #fff;
+                }
+               
+               .listOfCampaignButtons1 {
+                    left: auto;
+                    box-sizing: content-box;
+                    margin-top: 20px;
+                    margin-left: 20px;
+                    
+                }
+
+               .listOfCampaignButtons1 button{
+                    height: 40px;
+                    color: #fff;
+                    font-size: 15px;
+                    background: green;
+                    cursor: pointer;
+                    border-radius: 25px;
+                    border: none;
+                    outline: none;
+                    margin-top: 5%;
+                    margin-left:50px;
+                }
+
+                
+
+                .listOfCampaignButtons1 button:hover{
+                    
+                    background: orange;
+                
+                }
+
+                .listOfCampaignButtons1 button:active{
+                    background-color: #3e8e41;
+                    box-shadow: 0 5px #666;
+                    transform: translateY(4px);
+                }
+
+
+               .campaignSignOutButton1 button{
+                    height: 40px;
+                    color: #fff;
+                    font-size: 15px;
+                    background: red;
+                    cursor: pointer;
+                    border-radius: 25px;
+                    border: none;
+                    outline: none;
+                    margin-top: 5%;
+                    margin-left:70px;
+                }
+
+
+               .campaignMainMenuButton1 button{
+                    height: 40px;
+                    color: #fff;
+                    font-size: 15px;
+                    background: green;
+                    cursor: pointer;
+                    border-radius: 25px;
+                    border: none;
+                    outline: none;
+                    margin-top: 5%;
+                    margin-left:74px;
+                }
+
+               .campaignSignOutButton1 button:active{
+                    background-color: red;
+                    box-shadow: 0 5px #666;
+                    transform: translateY(4px);
+                }
+
+
+                .campaignSignOutButton1{
+                    margin-left: 23px;
+                }
+
+                .campaignSignOutButton1 button:hover{
+
+                    background: #FF0001;
+                }
+
+
+        {{!-- end of definition of css for the stop vote handlebars page --}}
+        
+
+          {{!-- Beginning of the Confirm_vote handlebars css design. --}}
+        
+        .entireBallotConfirm:before{
+            content: '';
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            background-image:url('./vote.webp');
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            -webkit-filter: blur(2px);
+            -moz-filter: blur(2px);
+            -o-filter: blur(2px);
+            -ms-filter: blur(2px);
+            filter: blur(2px);
+        }
+        .confirmBallot h2 {
+            margin: 0;
+            padding: 0 0 20px;
+            color: #fff;
+            text-align: center;
+            
+        }
+        .confirmBallot p
+        {
+            margin-bottom: 10px;
+            padding: 0;
+            font-weight: bold;
+            color: #fff;
+        }
+       
+        .confirmBallot{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 400px;
+            height: 500px;
+            padding: 80px 40px;
+            box-sizing: border-box;
+            background: rgba(0,0,0,.5);
+        }
+
+        .confirmBallot input[type="submit"] {
+            height: 30px;
+            color: #fff;
+            font-size: 15px;
+            
+            background:green;
+            margin-right: 20px;
+            margin-left: 50px;
+            cursor: pointer;
+            border-radius: 25px;
+            border: none;
+            outline: none;
+            margin-top: 10%;
+            margin-left: 24%;
+        }
+
+        .confirmBallot input[type="submit"]:hover {
+            background: orange;
+        }
+        
+        .confirmBallot span{
+            color: #ffe066
+        }
+        
+        .confirmBallot button{
+            height: 30px;
+            color: #fff;
+            font-size: 15px;
+            background: red;
+            cursor: pointer;
+            border-radius: 25px;
+            border: none;
+            outline: none;
+            margin-top: 5%;
+            margin-left: 23%;
+        }
+
+        .confirmVotesTable table, th, td{
+        margin-left: 20px;
+        margin-top: 1px;
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 5px;
+        padding-bottom: 1px;
+        text-align: center;
+        color: white;
+        font-weight: bold;
+    }
+
+     .confirmVotesTable table tr:nth-child(even){
+        background-color: orange;
+    }
+    
+    .confirmVotesTable table tr:nth-child(odd){
+        background-color: #ffd699;
+    }
+
+    {{!-- end of the confirm_vote handlebars design --}}
+
+    {{!-- beginning of vote_page for selection of candidates design --}}
+        
+        .entireSelectCandidatePage:before{
+            content: '';
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            background-image:url('candidateSelect.webp');
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            -webkit-filter: blur(1px);
+            -moz-filter: blur(1px);
+            -o-filter: blur(1px);
+            -ms-filter: blur(1px);
+            filter: blur(1px);
+        }
+     
+
+        .selectCandidate{
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 400px;
+            height: 550px;
+            padding: 80px 40px;
+            box-sizing: border-box;
+            background: rgba(0,0,0,.5);
+        }
+
+        .presidentialCandidate{
+            left: auto;
+            box-sizing: content-box;
+            background:#645e3e
+
+        }
+
+        .senatorialCandidate{
+            left: auto;
+            box-sizing:content-box;
+            background:#645e3e  
+        }
+    
+        .selectCandidate h1{
+            margin-top:auto;
+            color: white;
+            margin-left: 40px;
+        }
+
+        .selectCandidate h2{
+            margin-top: 2px;
+            color: white
+        }
+
+        .selectCandidate span{
+            color: #ffe066
+        }
+        .presidentialCandidate input{
+            color: white;
+        }
+
+        .presidentialCandidate h1{
+            color: white;
+            margin-left: 30px;
+        }
+
+        .presidentialCandidate h2{
+            color: white;
+            margin-left:40px;
+        }
+
+        .selectCandidate label{
+            color: white;
+        }
+
+        .senatorialCandidate h2{
+            color: white;
+            margin-left: 50px;
+        }
+
+        .presidentialCandidate input{
+            color: white;
+            margin-left: 42px;
+            margin-bottom: 12px;
+        }
+
+        .senatorialCandidate input{
+            color: white;
+            margin-left: 42px;
+            margin-bottom: 12px;
+        }
+
+        .senatorialCandidate label{
+            color: white;
+            margin-bottom: 12px;
+        }
+        
+        .submitBallot button{
+            margin-top: 20px;
+            margin-left: 90px;
+            color: white;
+            background-color:#004d26;
+            border-radius: 25px;
+            text-shadow: yellow;
+            font-size: 20px;
+        }
+
+        .submitBallot button:hover{
+            background: orange;
+            cursor:pointer;
+        }
+
+        .noVoteLogout button {
+            margin-top: 20px;
+            margin-left: 120px;
+            color: white;
+            background-color:#004d26;
+            border-radius: 25px;
+            text-shadow: yellow;
+            font-size: 20px;
+        }  
+
+        .noVoteLogout button:hover {
+            background: red;
+            cursor:pointer;
+        }
+        
+    {{!-- end of vote_page for selection of candidates css design --}}
+
+    {{!-- Beginning of styling for admin page with buttons --}}
+    
+        .entireAdminPage:before{
+            content: '';
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            background-image:url('./vote.webp');
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            -webkit-filter: blur(2px);
+            -moz-filter: blur(2px);
+            -o-filter: blur(2px);
+            -ms-filter: blur(2px);
+            filter: blur(2px);
+        }
+        .adminOptionsButtons
+        {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 400px;
+            height: 500px;
+            padding: 80px 40px;
+            box-sizing: border-box;
+            background: rgba(0,0,0,.5);
+        }
+        
+        .adminOptionsButtons h2 {
+            
+            margin-top: -40px;
+            margin-bottom: 10px;
+            color: #fff;
+            text-align: center;   
+        }
+        .adminOptionsButtons p
+        {
+            margin: 0px;
+            padding: 0;
+            font-weight: bold;
+            color: #fff;
+        }
+        
+        .listOfButtons {
+            left: auto;
+            box-sizing: content-box;
+            margin-top: 20px;
+            margin-left: 20px;
+            
+        }
+
+        .listOfButtons button{
+            height: 40px;
+            color: #fff;
+            font-size: 15px;
+            background: green;
+            cursor: pointer;
+            border-radius: 25px;
+            border: none;
+            outline: none;
+            margin-top: 5%;
+            margin-left:50px;
+        }
+
+        
+
+        .listOfButtons button:hover{
+             
+            background: orange;
+           
+        }
+
+        .listOfButtons button:active{
+            background-color: #3e8e41;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+
+        .adminSignOutButton button{
+            height: 40px;
+            color: #fff;
+            font-size: 15px;
+            background: red;
+            cursor: pointer;
+            border-radius: 25px;
+            border: none;
+            outline: none;
+            margin-top: 5%;
+            margin-left:70px;
+        }
+
+        .adminSignOutButton button:active{
+            background-color: red;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+
+        .adminNewCampaignButton button{
+                margin-left: 69px;
+        }
+
+        .adminExistingCampaignButton{
+            margin-left: -20px;
+        }
+
+        .adminTallyButton{
+            margin-left: 35px;
+        }
+
+        .adminStopCampaignButton{
+            margin-left: 20px;
+        }
+
+        .adminSignOutButton{
+            margin-left: 23px;
+        }
+
+        .adminSignOutButton button:hover{
+
+            background: #FF0001;
+        }
+
+  {{!-- end of styling of admin page with buttons --}}
+
+  {{!-- Beginning of New Campaign Page css design --}}
+
+   
+        .entireStartNewCampaignPage:before{
+            content: '';
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            background-image:url('./vote.webp');
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            -webkit-filter: blur(2px);
+            -moz-filter: blur(2px);
+            -o-filter: blur(2px);
+            -ms-filter: blur(2px);
+            filter: blur(2px);
+        }
+
+        .campaignOptionsButtons
+        {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 400px;
+            height: 500px;
+            padding: 80px 40px;
+            box-sizing: border-box;
+            background: rgba(0,0,0,.5);
+            zoom: 80%;
+        }
+        
+        .campaignOptionsButtons h2 {
+            
+            margin-top: 40px;
+            margin-bottom: 10px;
+            color: #fff;
+            text-align: center;   
+        }
+        .campaignOptionsButtons p
+        {
+            margin: 0px;
+            padding: 0;
+            font-weight: bold;
+            color: #fff;
+        }
+        .campaignOptionsButtons marquee
+        {
+            margin-top: 10px;
+            padding: 0;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .listOfCampaignButtons {
+            left: auto;
+            box-sizing: content-box;
+            margin-top: 20px;
+            margin-left: 20px;
+            
+        }
+
+        .listOfCampaignButtons button{
+            height: 40px;
+            color: #fff;
+            font-size: 15px;
+            background: green;
+            cursor: pointer;
+            border-radius: 25px;
+            border: none;
+            outline: none;
+            margin-top: 5%;
+            margin-left:50px;
+        }
+
+        
+
+        .listOfCampaignButtons button:hover{
+             
+            background: orange;
+           
+        }
+
+        .listOfCampaignButtons button:active{
+            background-color: #3e8e41;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+
+        .campaignSignOutButton button{
+            height: 40px;
+            color: #fff;
+            font-size: 15px;
+            background: red;
+            cursor: pointer;
+            border-radius: 25px;
+            border: none;
+            outline: none;
+            margin-top: 5%;
+            margin-left:70px;
+        }
+
+        .campaignMainMenuButton button{
+            height: 40px;
+            color: #fff;
+            font-size: 15px;
+            background: green;
+            cursor: pointer;
+            border-radius: 25px;
+            border: none;
+            outline: none;
+            margin-top: 5%;
+            margin-left:84px;
+        }
+
+        .campaignSignOutButton button:active{
+            background-color: red;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+
+
+        .campaignSignOutButton{
+            margin-left: 23px;
+        }
+
+        .campaignSignOutButton button:hover{
+
+            background: #FF0001;
+        }
+
+
+    {{!-- End of new campaing page --}}
+
+
+    {{!-- Beginning of continue campaign css design --}}
+
+    .entireContinueNewCampaignPage:before{
+            content: '';
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            background-image:url('./vote.webp');
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            -webkit-filter: blur(2px);
+            -moz-filter: blur(2px);
+            -o-filter: blur(2px);
+            -ms-filter: blur(2px);
+            filter: blur(2px);
+        }
+
+        {{!-- NOTE THAT THIS PAGE DEPENDS OF THE ALREADY DEFINED CSS FOR THE START NEW CAMPAIGN PAGE --}}
+        {{!-- End of the continue campaing page design --}}
+
+    {{!-- Beginning of Tally Vote page css design --}}
+            .entireTallyVotePage:before{
+            content: '';
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            background-image:url('./vote.jpg');
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            -webkit-filter: blur(2px);
+            -moz-filter: blur(2px);
+            -o-filter: blur(2px);
+            -ms-filter: blur(2px);
+            filter: blur(2px);
+        }
+
+        .tallyVoteButtons
+        {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 400px;
+            height: 500px;
+            padding: 80px 40px;
+            box-sizing: border-box;
+            background: rgba(0,0,0,.5);
+        }
+        
+        .tallyVoteButtons h2 {
+            
+            margin-top: -20px;
+            margin-bottom: 10px;
+            color: #fff;
+            text-align: center;   
+        }
+
+        .tallyVoteButtons p
+        {
+            margin:0px;
+            margin-left: 50px;
+            
+            padding: 0;
+            font-weight: bold;
+            color: #fff;
+        }
+        .tallyVoteButtons marquee
+        {
+            margin-top: 10px;
+            padding: 0;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .listOfTallyVoteButtons {
+            left: auto;
+            box-sizing: content-box;
+            margin-top: 20px;
+            margin-left: 20px;
+            
+        }
+
+        .listOfTallyVoteButtons button{
+            height: 40px;
+            color: #fff;
+            font-size: 15px;
+            background: green;
+            cursor: pointer;
+            border-radius: 25px;
+            border: none;
+            outline: none;
+            margin-top: 5%;
+            margin-left:50px;
+        }
+
+        
+
+        .listOfTallyVoteButtons button:hover{
+             
+            background: orange;
+           
+        }
+
+        .llistOfTallyVoteButtons button:active{
+            background-color: #3e8e41;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+
+        .tallyVoteSignOutButton button{
+            height: 40px;
+            color: #fff;
+            font-size: 15px;
+            background: red;
+            cursor: pointer;
+            border-radius: 25px;
+            border: none;
+            outline: none;
+            margin-top: 5%;
+            margin-left:70px;
+        }
+
+        .tallyVoteMainMenuButton button{
+            height: 40px;
+            color: #fff;
+            font-size: 15px;
+            background: green;
+            cursor: pointer;
+            border-radius: 25px;
+            border: none;
+            outline: none;
+            margin-top: 10%;
+            margin-left:84px;
+        }
+
+        .tallyVoteSignOutButton button:active{
+            background-color: red;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+
+
+        .tallyVoteSignOutButton{
+            margin-left: 23px;
+        }
+
+        .tallyVoteSignOutButton button:hover{
+
+            background: #FF0001;
+        }
+
+    {{!-- End of Tally Vote css page design --}}
+
+    {{!-- Beginning of the Tally vote page with table css design --}}
+      .entireTallyVotePage:before{
+            content: '';
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            background-image:url('./vote.webp');
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            -webkit-filter: blur(2px);
+            -moz-filter: blur(2px);
+            -o-filter: blur(2px);
+            -ms-filter: blur(2px);
+            filter: blur(2px);
+        }
+
+        .tallyVoteButtons
+        {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 400px;
+            height: 500px;
+            padding: 80px 40px;
+            box-sizing: border-box;
+            background: rgba(0,0,0,.5);
+        }
+        
+        .tallyVoteButtons h2 {
+            
+            margin-top: -40px;
+            margin-bottom: 5px;
+            color: #fff;
+            text-align: center;   
+        }
+
+        .tallyVoteButtons p
+        {
+            margin-bottom:10px;
+            margin-left: 80px;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #fff;
+        }
+        .tallyVoteButtons marquee
+        {
+            margin-top: 10px;
+            padding: 0;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .listOfTallyVoteButtons {
+            left: auto;
+            box-sizing: content-box;
+            margin-top: 20px;
+            margin-left: 20px;
+            
+        }
+
+        .listOfTallyVoteButtons button{
+            height: 40px;
+            color: #fff;
+            font-size: 15px;
+            background: green;
+            cursor: pointer;
+            border-radius: 25px;
+            border: none;
+            outline: none;
+            margin-top: 5%;
+            margin-left:50px;
+        }
+
+        
+
+        .listOfTallyVoteButtons button:hover{
+             
+            background: orange;
+           
+        }
+
+        .llistOfTallyVoteButtons button:active{
+            background-color: #3e8e41;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+
+        .tallyVoteSignOutButton button{
+            height: 40px;
+            color: #fff;
+            font-size: 15px;
+            background: orange;
+            cursor: pointer;
+            border-radius: 25px;
+            border: none;
+            outline: none;
+            margin-top: 5px;
+            margin-left:55px;
+        }
+
+        .tallyVoteMainMenuButton button{
+            height: 40px;
+            color: #fff;
+            font-size: 15px;
+            background: green;
+            cursor: pointer;
+            border-radius: 25px;
+            border: none;
+            outline: none;
+            margin-top: -5px;
+            margin-left:100px;
+        }
+
+        .tallyVoteSignOutButton button:active{
+            background-color: red;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+
+
+        .tallyVoteSignOutButton{
+            margin-left: 55px;
+        }
+
+        .tallyVoteSignOutButton button:hover{
+
+            background: #FF0001;
+        }
+        
+        .presidentialResultsTable table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 10px;
+        padding-bottom: 5px;
+        text-align: center;
+        color: white;
+        font-weight: bold;
+        margin-bottom: 1px;
+        margin-left: 20px;
+    }
+    
+     .presidentialResultsTable table tr:nth-child(even){
+        background-color: green;
+    }
+    .presidentialResultsTable table tr:nth-child(odd){
+        background-color: #b3ffb3;
+    } 
+    
+    .senatorialResultsTable table, th, td{
+        margin-left: 20px;
+        margin-top: 10px;
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 5px;
+        padding-bottom: 1px;
+        text-align: center;
+        color: black;
+        font-weight: bold;
+    }
+
+    .senatorialResultsTable caption{
+        color: white;
+    }
+
+    .senatorialResultsTable table tr:nth-child(even){
+        background-color: orange;
+    }
+    
+    .senatorialResultsTable table tr:nth-child(odd){
+        background-color: #ffd699;
+    } 
+  {{!-- End of the tally vote with table page css design --}}
+
+  {{!-- Beginning of voter login page css design --}}
+  .entireVoterLoginPage:before{
+            content: '';
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            background-image: url('voterLogin.webp');
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            -webkit-filter: blur(0px);
+            -moz-filter: blur(0px);
+            -o-filter: blur(0px);
+            -ms-filter: blur(0px);
+            filter: blur(0px);
+        }
+        .voterLoginPage
+        {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 400px;
+            height: 500px;
+            padding: 80px 40px;
+            box-sizing: border-box;
+            background: rgba(0,0,0,.5);
+        }
+
+        .voterLoginPage a {
+            margin-left: 115px;
+            color: white;
+            font-weight: bold;
+        }
+
+        .voterLoginPage a:hover{
+            color:#FFFF99
+        }
+
+        .voterLoginPage h2 {
+            margin: 0;
+            padding: 0 0 20px;
+            color: #fff;
+            text-align: center;
+            
+        }
+
+         .voterLoginPage h4 {
+            margin: 0;
+            padding: 0 0 20px;
+            color: #fff;
+            font-style: italic;
+            text-align: center;
+            
+        }
+
+        .voterLoginPage p
+        {
+            margin: 0;
+            padding: 0;
+            font-weight: bold;
+            color: #fff;
+        }
+        .voterLoginPage input
+        {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .voterLoginPage input[type="text"],
+        .voterLoginPage input[type="password"]
+        {
+            border: none;
+            border-bottom: 1px solid #fff;
+            background: transparent;
+            outline: none;
+            height: 40px;
+            color: #fff;
+            font-size: 16px;
+        }
+        .voterLoginPage input[type="submit"] {
+            height: 30px;
+            color: #fff;
+            font-size: 15px;
+            background: red;
+            cursor: pointer;
+            border-radius: 25px;
+            border: none;
+            outline: none;
+            margin-top: 15%;
+        }
+
+        {{!-- End of the voter login page css design --}}
+
+        {{!-- Beginning of admin login page css design --}}
+         .entireAdminLoginPage:before{
+            content: '';
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            background-image: url('vote.webp');
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            -webkit-filter: blur(2px);
+            -moz-filter: blur(2px);
+            -o-filter: blur(2px);
+            -ms-filter: blur(2px);
+            filter: blur(2px);
+        }
+        .adminLoginPage
+        {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 400px;
+            height: 500px;
+            padding: 80px 40px;
+            box-sizing: border-box;
+            background: rgba(0,0,0,.5);
+        }
+        .adminAvatar {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            top: calc(-80px/2);
+            left: calc(50% - 40px);
+        }
+        .adminLoginPage h2 {
+            margin: 0;
+            padding: 0 0 20px;
+            color: #fff;
+            text-align: center;
+            
+        }
+
+        .adminLoginPage h4 {
+            margin: 0;
+            padding: 0 0 20px;
+            font-style: italic;
+            color: #fff;
+            text-align: center;
+            
+        }
+        
+        .adminLoginPage p
+        {
+            margin: 0;
+            padding: 0;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .adminLoginPage a {
+            margin-left: 125px;
+            color: white;
+            font-weight: bold;
+        }
+
+        .adminLoginPage a:hover{
+            color: #FFFF99
+        }
+
+        .adminLoginPage input
+        {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .adminLoginPage input[type="text"],
+        .adminLoginPage input[type="password"]
+        {
+            border: none;
+            border-bottom: 1px solid #fff;
+            background: transparent;
+            outline: none;
+            height: 40px;
+            color: #fff;
+            font-size: 16px;
+        }
+        .adminLoginPage input[type="submit"] {
+            height: 30px;
+            color: #fff;
+            font-size: 15px;
+            background: green;
+            cursor: pointer;
+            border-radius: 25px;
+            border: none;
+            outline: none;
+            margin-top: 15%;
+        }
+
+    {{!-- End of admin login page css design. --}}
+
+   
+    
+
+      
+  </style>
+ <div class="entireStartNewCampaignPage">
+        <div class="campaignOptionsButtons">
+            <h2>Welcome, {{id}}</h2>
+            <p style="text-align: center;">New Campaign has been started successfully.</p>
+            <marquee style="text-align: center; color:orange" behavior="scroll" scrollamount="1"  height="30px" direction="down" >Please, Sign Out for Voting to commence.</marquee>
+            
+        
+            <form action=" " method="GET">
+                <div class="listOfCampaignButtons">
+                    <div class="campaignMainMenuButton">
+                    <button type="submit"  formaction="/adminPage">Main Menu</button>
+                    </div>
+                   
+                    <div class="campaignSignOutButton" >
+                    <button type="submit" formaction="/adminLogout">Sign Out</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>

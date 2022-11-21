@@ -1,0 +1,170 @@
+
+<style>
+   .entireSelectCandidatePage:before{
+            content: '';
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            background-image:url('candidateSelect.webp');
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            -webkit-filter: blur(1px);
+            -moz-filter: blur(1px);
+            -o-filter: blur(1px);
+            -ms-filter: blur(1px);
+            filter: blur(1px);
+        }
+     
+
+        .selectCandidate{
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 400px;
+            height: 550px;
+            padding: 80px 40px;
+            box-sizing: border-box;
+            background: rgba(0,0,0,.5);
+            zoom: 80%;
+        }
+
+        .presidentialCandidate{
+            left: auto;
+            box-sizing: content-box;
+            background:#645e3e
+
+        }
+
+        .senatorialCandidate{
+            left: auto;
+            box-sizing:content-box;
+            background:#645e3e  
+        }
+    
+        .selectCandidate h1{
+            margin-top:auto;
+            color: white;
+            margin-left: 40px;
+        }
+
+        .selectCandidate h2{
+            margin-top: 2px;
+            color: white
+        }
+
+        .selectCandidate span{
+            color: #ffe066
+        }
+        .presidentialCandidate input{
+            color: white;
+        }
+
+        .presidentialCandidate h1{
+            color: white;
+            margin-left: 30px;
+        }
+
+        .presidentialCandidate h2{
+            color: white;
+            margin-left:40px;
+        }
+
+        .selectCandidate label{
+            color: white;
+        }
+
+        .senatorialCandidate h2{
+            color: white;
+            margin-left: 50px;
+        }
+
+        .presidentialCandidate input{
+            color: white;
+            margin-left: 42px;
+            margin-bottom: 12px;
+        }
+
+        .senatorialCandidate input{
+            color: white;
+            margin-left: 42px;
+            margin-bottom: 12px;
+        }
+
+        .senatorialCandidate label{
+            color: white;
+            margin-bottom: 12px;
+        }
+        
+        .submitBallot button{
+            margin-top: 20px;
+            margin-left: 90px;
+            color: white;
+            background-color:#004d26;
+            border-radius: 25px;
+            text-shadow: yellow;
+            font-size: 20px;
+        }
+
+        .submitBallot button:hover{
+            background: orange;
+            cursor:pointer;
+        }
+
+        .noVoteLogout button {
+            margin-top: 20px;
+            margin-left: 120px;
+            color: white;
+            background-color:#004d26;
+            border-radius: 25px;
+            text-shadow: yellow;
+            font-size: 20px;
+        }  
+
+        .noVoteLogout button:hover {
+            background: red;
+            cursor:pointer;
+        }
+        
+</style>
+
+<div class= 'entireSelectCandidatePage'>
+    <div class="selectCandidate">
+
+<h2> Hey <span>{{id}}</span>, select a candidate from each campaign</h2>
+
+<form action="/vote" method="POST">
+<div class="presidentialCandidate">
+            <h2>Presidential Campaign</h2>
+          <div>
+            <input type="radio" id="APC" name="presidential" value="APC" required>
+            <label for="APC">APC</label><br>
+            <input type="radio" id="PDP" name="presidential" value="PDP">
+            <label for="PDP">PDP</label><br>
+            <input type="radio" id="APGA" name="presidential" value="APGA">
+            <label for="APGA">APGA</label> <br>
+         </div>
+         <br>
+   </div>
+     <div class="senatorialCandidate">
+            <h2>Senatorial Campaign</h2>
+            <input type="radio" id="APC" name="senatorial" value="APC" required>
+            <label for="APC">APC</label><br>
+            <input type="radio" id="PDP" name="senatorial" value="PDP">
+            <label for="PDP">PDP</label><br>
+            <input type="radio" id="APGA" name="senatorial" value="APGA">
+            <label for="APGA">APGA</label> <br>
+           <br>
+        </div>
+     <div class="submitBallot">
+            <button type="submit">Cast my Ballot</button>
+     </div>
+     {{!-- <div class="noVoteLogout">
+            <button type="submit" formaction="/noVoteLogout">Logout</button> --}}
+     </div>
+   </form>
+    </div>
+</div>

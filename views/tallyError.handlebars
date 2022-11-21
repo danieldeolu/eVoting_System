@@ -1,0 +1,44 @@
+<style>
+    .entireContinueNewCampaignPage:before{
+            content: '';
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            background-image:url('./vote.webp');
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            -webkit-filter: blur(2px);
+            -moz-filter: blur(2px);
+            -o-filter: blur(2px);
+            -ms-filter: blur(2px);
+            filter: blur(2px);
+        }
+    
+    .campaignOptionsButtons{
+        zoom: 80%;
+    }
+
+    
+</style>
+<div class="entireContinueNewCampaignPage">
+        <div class="campaignOptionsButtons">
+            <h2>Welcome, {{id}}</h2>
+            
+            <p>Please start a campaign before going on to tally the votes.</p>
+            
+        
+            <form action=" " method="GET">
+                <div class="listOfCampaignButtons">
+                    <div class="campaignMainMenuButton">
+                    <button type="submit"  formaction="/adminPage">Main Menu</button>
+                    </div>
+                   
+                    <div class="campaignSignOutButton" >
+                    <button type="submit" formaction="/adminLogout">Sign Out</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>

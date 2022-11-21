@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+</head>
+
+
+<body>
+    
+    <style>
+
+    body{
+            margin: 0;
+            padding: 0;
+        }
+
+
+        .entireStartNewCampaignPage:before{
+            content: '';
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background-image:url('./vote.webp');
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            -webkit-filter: blur(2px);
+            -moz-filter: blur(2px);
+            -o-filter: blur(2px);
+            -ms-filter: blur(2px);
+            filter: blur(2px);
+        }
+
+        .campaignOptionsButtons
+        {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 400px;
+            height: 500px;
+            padding: 80px 40px;
+            box-sizing: border-box;
+            background: rgba(0,0,0,.5);
+        }
+        
+        .campaignOptionsButtons h2 {
+            
+            margin-top: 40px;
+            margin-bottom: 10px;
+            color: #fff;
+            text-align: center;   
+        }
+        .campaignOptionsButtons p
+        {
+            margin: 0px;
+            padding: 0;
+            font-weight: bold;
+            color: #fff;
+        }
+        .campaignOptionsButtons marquee
+        {
+            margin-top: 10px;
+            padding: 0;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .listOfCampaignButtons {
+            left: auto;
+            box-sizing: content-box;
+            margin-top: 20px;
+            margin-left: 20px;
+            
+        }
+
+        .listOfCampaignButtons button{
+            height: 40px;
+            color: #fff;
+            font-size: 15px;
+            background: green;
+            cursor: pointer;
+            border-radius: 25px;
+            border: none;
+            outline: none;
+            margin-top: 5%;
+            margin-left:50px;
+        }
+
+        
+
+        .listOfCampaignButtons button:hover{
+             
+            background: orange;
+           
+        }
+
+        .listOfCampaignButtons button:active{
+            background-color: #3e8e41;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+
+        .campaignSignOutButton button{
+            height: 40px;
+            color: #fff;
+            font-size: 15px;
+            background: red;
+            cursor: pointer;
+            border-radius: 25px;
+            border: none;
+            outline: none;
+            margin-top: 5%;
+            margin-left:70px;
+        }
+
+        .campaignMainMenuButton button{
+            height: 40px;
+            color: #fff;
+            font-size: 15px;
+            background: green;
+            cursor: pointer;
+            border-radius: 25px;
+            border: none;
+            outline: none;
+            margin-top: 5%;
+            margin-left:84px;
+        }
+
+        .campaignSignOutButton button:active{
+            background-color: red;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+
+
+        .campaignSignOutButton{
+            margin-left: 23px;
+        }
+
+        .campaignSignOutButton button:hover{
+
+            background: #FF0001;
+        }
+
+    </style>
+
+
+<div class="entireContinueNewCampaignPage">
+    <div class="campaignOptionsButtons">
+        <h2>Welcome, {{id}}</h2>
+        
+        <p>Campaign resumption successful.</p>
+        <marquee>Please, Sign Out for Voting to continue</marquee>
+        
+    
+        <form action=" " method="GET">
+            <div class="listOfCampaignButtons">
+                <div class="campaignMainMenuButton">
+                    <button type="submit"  formaction="/adminPage">Main Menu</button>
+                </div>
+               
+                <div class="campaignSignOutButton" >
+                    <button type="submit" formaction="/adminLogout">Sign Out</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

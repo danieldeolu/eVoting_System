@@ -1,0 +1,153 @@
+
+
+<style>
+    
+    body {
+        font-size: 20px;
+    }
+    .entireBallotConfirm:before{
+            content: '';
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            background-image:url('bitTest.webp');
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            -webkit-filter: blur(2px);
+            -moz-filter: blur(2px);
+            -o-filter: blur(2px);
+            -ms-filter: blur(2px);
+            filter: blur(2px);
+        }
+        .confirmBallot h2 {
+            margin: 0;
+            padding: 0 0 20px;
+            color: #fff;
+            text-align: center;
+            
+        }
+        .confirmBallot p
+        {
+            margin-bottom: 10px;
+            padding: 0;
+            
+            font-weight: bold;
+            color: #fff;
+        }
+       
+        .confirmBallot{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 400px;
+            height: 500px;
+            padding: 80px 40px;
+            box-sizing: border-box;
+            background: rgba(0,0,0,.5);
+        }
+
+        .confirmBallot input[type="submit"] {
+            height: 30px;
+            color: #fff;
+            font-size: 15px;
+            
+            background:green;
+            margin-right: 20px;
+            margin-left: 50px;
+            cursor: pointer;
+            border-radius: 25px;
+            border: none;
+            outline: none;
+            margin-top: 10%;
+            margin-left: 24%;
+        }
+
+        .confirmBallot input[type="submit"]:hover {
+            background: orange;
+        }
+        
+        .confirmBallot span{
+            color: #ffe066
+        }
+        
+        .confirmBallot button{
+            height: 30px;
+            color: #fff;
+            font-size: 18px;
+            background-color: orange;
+            cursor: pointer;
+            border-radius: 25px;
+            border: none;
+            outline: none;
+            margin-top: 5%;
+            margin-left: 23%;
+        }
+
+        .confirmBallot button:hover{
+            
+            background-color: red;
+           
+        }
+        
+
+        .confirmVotesTable table, th, td{
+        margin-left: 20px;
+        margin-top: 1px;
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 5px;
+        padding-bottom: 1px;
+        text-align: center;
+        color: white;
+        font-weight: bold;
+    }
+
+    .confirmVotesTable td, th {
+            color: black
+    }
+
+     .confirmVotesTable table tr:nth-child(even){
+        background-color: orange;
+    }
+    
+    .confirmVotesTable table tr:nth-child(odd){
+        background-color: #ffd699;
+    }
+
+     marquee {
+            color: orange;
+            font-weight: bold;
+    }
+
+
+    #viewBallots {
+        background-color: green;
+    }
+
+    #viewBallots:hover{
+        background-color: orange;
+    }
+
+</style>
+
+<div class= 'entireBallotConfirm'>
+<div class="confirmBallot">
+<form action="/bitTestTally" method="GET">
+
+     <marquee style="text-align: center; margin-bottom:20px" behavior="scroll" scrollamount="1"  height="30px" direction="down">Kindly note the following.</marquee>
+
+    <p>Ballots have been committed successfully to the <b style="color: orange;">Testing Blockchain Ledger</b></p>
+    <p>1. Click on <b style="color: orange;">View Generated Ballot</b> to view the generated ballots on the blockleger</p>
+    <p>2. Click on <b style="color: orange;">Proceed to Tally Votes</b> to tally the votes and see the result.</p>
+
+    <button formaction= "/bitTestLedger" formtarget="_blank" id="viewBallots" style="margin-left: 20%;">View Generated Ballots</button>
+    <button>Proceed to Tally Votes</button>
+    
+</form>
+</div>
+</div>

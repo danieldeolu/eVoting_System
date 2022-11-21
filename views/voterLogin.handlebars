@@ -1,0 +1,111 @@
+<style>
+     .entireVoterLoginPage:before{
+            content: '';
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            background-image: url('voterLogin.webp');
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            -webkit-filter: blur(0px);
+            -moz-filter: blur(0px);
+            -o-filter: blur(0px);
+            -ms-filter: blur(0px);
+            filter: blur(0px);
+        }
+        .voterLoginPage
+        {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 400px;
+            height: 500px;
+            padding: 80px 40px;
+            box-sizing: border-box;
+            background: rgba(0,0,0,.5);
+            zoom: 80%;
+        }
+
+        .voterLoginPage a {
+            margin-left: 115px;
+            color: white;
+            font-weight: bold;
+        }
+
+        .voterLoginPage a:hover{
+            color:#FFFF99
+        }
+
+        .voterLoginPage h2 {
+            margin: 0;
+            padding: 0 0 20px;
+            color: #fff;
+            text-align: center;
+            
+        }
+
+         .voterLoginPage h4 {
+            margin: 0;
+            padding: 0 0 20px;
+            color: #fff;
+            font-style: italic;
+            text-align: center;
+            
+        }
+
+        .voterLoginPage p
+        {
+            margin: 0;
+            padding: 0;
+            font-weight: bold;
+            color: #fff;
+        }
+        .voterLoginPage input
+        {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .voterLoginPage input[type="text"],
+        .voterLoginPage input[type="password"]
+        {
+            border: none;
+            border-bottom: 1px solid #fff;
+            background: transparent;
+            outline: none;
+            height: 40px;
+            color: #fff;
+            font-size: 16px;
+        }
+        .voterLoginPage input[type="submit"] {
+            height: 30px;
+            color: #fff;
+            font-size: 15px;
+            background: red;
+            cursor: pointer;
+            border-radius: 25px;
+            border: none;
+            outline: none;
+            margin-top: 15%;
+        }
+
+</style>
+
+<div class = "entireVoterLoginPage">
+<div class="voterLoginPage">
+<h4 onchange="displayMessage('User has voted already')">{{message}}</h4>
+
+<h2>Voter Login</h2>
+<form action="/voterLogin" method="POST">
+     <p>Username</p>
+            <input type="text" name="id" placeholder="Enter Username" required>
+            <p>Password</p>
+            <input type="password" name="password" placeholder="Enter Password" required>
+            <input type="submit" name="" value="Sign In">
+            {{!-- <a href="/adminLogin">Admin Login</a> --}}
+</form>
+</div>
+</div>
+

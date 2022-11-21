@@ -1,0 +1,145 @@
+let politicalParties = [
+    "Accord Party (A)",
+    "Action Alliance (AA)", 
+    "Action Democratic Party (ADP)", 
+    "Action Peoples Party", 
+    "All Progressives Congress (APC)",
+    "All Progressives Grand Alliance (APGA)", 
+    "Boot Party (BP)", 
+    "KOWA Party (KP)",
+    "Labour Party (LP)",
+    "National Rescue Movement (NRM)",
+    "New Nigeria Peoples Party (NNPP)",
+    "Peoples Democratic Party (PDP)",
+    "Peoples Redemption Party (PRP)",
+    "Social Democratic Party (SDP)",
+    "Young Progressive Party (YPP)",
+    "Zenith Labour Party (ZLP)"
+    ]
+
+
+
+
+let politicalPartiesJson = {
+    {
+        "index": "0", 
+        "partyName": "Accord Party"
+        "partyAcronym" : "A"
+    },
+
+    {
+        "index": "1", 
+        "partyName": "Action Alliance", 
+        "partyAcronym" : "AA"
+    },
+
+    {
+        "index": "2", 
+        "partyName": "Action Democratic Party", 
+        "partyAcronym" : " ADP"
+    },
+
+    {
+        "index": "3", 
+        "partyName": "Action Peoples Party",
+        "partyAcronym" : "APP"
+    },
+
+
+    {
+        "index": "4", 
+        "partyName": "All Progressives Congress",
+        "partyAcronym" : "APC"
+    },
+
+    {
+        "index": "5", 
+        "partyName": "All Progressives Grand Alliance",
+        "partyAcronym" : "APGA"
+    },
+
+    {
+        "index": "6", 
+        "partyName": "Boot Party",
+        "partyAcronym" : "BP"
+    },
+
+    {
+        "index": "7", 
+        "partyName": "KOWA Party",
+        "partyAcronym" : "KP"
+    },
+
+
+    {
+        "index": "8", 
+        "partyName": "Labour Party",
+        "partyAcronym" : "LP"
+    },
+
+    {
+        "index": "9", 
+        "partyName": "National Rescue Movement",
+        "partyAcronym" : "NRM"
+    },
+
+    {
+        "index": "10", 
+        "partyName": "New Nigeria Peoples Party",
+        partyName: "NNPP"
+    },
+
+    {
+        "index": "11", 
+        "partyName": "Peoples Democratic Party",
+        "partyAcronym" : "PDP"
+    },
+
+
+    {
+        "index": "12", 
+        "partyName": "Peoples Redemption Party",
+        "partyAcronym" : "PRP"
+    },
+
+    {
+        "index": "13", 
+        "partyName": "Social Democratic Party",
+        "partyAcronym" : "SDP"
+    },
+
+    {
+        "index": "14", 
+        "partyName": "Young Progressive Party",
+        "partyAcronym" : "YPP"
+    },
+
+    {
+        "index": "15", 
+        "partyName": "Zenith Labour Party (ZLP)",
+        "partyAcronym" : "ZLP"
+    },
+    
+    }
+
+
+
+
+
+    1. [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+    2. [0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+    3. [0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0]
+    4. [0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0]
+    5. [0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0]
+    6. [0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0]
+    7. [0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0]
+    8. [0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0]
+    9. [0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0]
+    10.[0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0]
+    11.[0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0]
+    12.[0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0]
+    13.[0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0]
+    14.[0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0]
+    15.[0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0]
+    16.[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1]
+    

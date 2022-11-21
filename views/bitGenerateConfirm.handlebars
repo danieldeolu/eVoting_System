@@ -1,0 +1,172 @@
+
+
+<style>
+    
+    .entireBallotConfirm:before{
+            content: '';
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            background-image:url('bitTest.webp');
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            -webkit-filter: blur(2px);
+            -moz-filter: blur(2px);
+            -o-filter: blur(2px);
+            -ms-filter: blur(2px);
+            filter: blur(2px);
+        }
+        .confirmBallot h2 {
+            margin: 0;
+            padding: 0 0 20px;
+            color: #fff;
+            text-align: center;
+            
+        }
+        .confirmBallot p
+        {
+            margin-bottom: 10px;
+            padding: 0;
+            font-weight: bold;
+            color: #fff;
+            margin-top: 30px;
+        }
+       
+        .confirmBallot{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 400px;
+            height: 500px;
+            padding: 80px 40px;
+            box-sizing: border-box;
+            background: rgba(0,0,0,.5);
+        }
+
+        .confirmBallot input[type="submit"] {
+            height: 30px;
+            color: #fff;
+            font-size: 15px;
+            
+            background:green;
+            margin-right: 20px;
+            margin-left: 50px;
+            cursor: pointer;
+            border-radius: 25px;
+            border: none;
+            outline: none;
+            margin-top: 10%;
+            margin-left: 24%;
+        }
+
+        .confirmBallot input[type="submit"]:hover {
+            background: orange;
+        }
+        
+        .confirmBallot span{
+            color: #ffe066
+        }
+        
+        .confirmBallot button{
+            height: 30px;
+            color: #fff;
+            font-size: 15px;
+            background: orange;
+            cursor: pointer;
+            border-radius: 25px;
+            border: none;
+            outline: none;
+            margin-top: 5%;
+            margin-left: 23%;
+        }
+
+        .confirmVotesTable table, th, td{
+        margin-left: 20px;
+        margin-top: 1px;
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 5px;
+        padding-bottom: 1px;
+        text-align: center;
+        color: white;
+        font-weight: bold;
+    }
+
+    .confirmVotesTable td, th {
+            color: black
+    }
+
+     .confirmVotesTable table tr:nth-child(even){
+        background-color: orange;
+    }
+    
+    .confirmVotesTable table tr:nth-child(odd){
+        background-color: #ffd699;
+    }
+
+    #sendTestVotes{
+        color: white;
+        background-color: green;
+    }
+
+    #sendTestVotes:hover{
+        color: white;
+        background-color: orange;
+    }
+
+    #tallyTestVotes:hover {
+        color: white;
+        background-color: red;
+    }
+
+     marquee {
+            color: orange;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+</style>
+
+<div class= 'entireBallotConfirm'>
+<div class="confirmBallot">
+<form action="/bitSendToBlockchain" method="GET">
+    
+
+    <h2>Welcome, <b style="color: orange;">{{user}}</b></h2>
+    {{!-- <p>Congrats, Ballot Generation was successful</p> --}}
+     <marquee style="text-align: center;" behavior="scroll" scrollamount="1"  height="30px" direction="down">Ballots have been Generated Successfully.</marquee>
+    {{!-- <button formaction="/bitTestTally" >Tally Votes</button> --}}
+    <p>1. Click on <b style="color: orange;">Post Ballots to Blockchain</b> to commit the newly generated ballots to the Test Blockchain</p>
+
+    <p>2. Click on  <b style="color: orange;">Sign Out</b> to abort the test process and sign out</p>
+
+    <button style="margin-left: 60px;" id="sendTestVotes" type="submit">Post Ballots to Blockchain</button>    
+   
+</form>
+        <form action="">
+            <button style="background-color: red; margin-left:113px">Sign Out</button>
+        </form>
+</div>
+</div>
+
+
+<script type="text/javascript">
+
+    let tallyTestButton = document.getElementById("tallyTestVotes")
+    function enableTallyButton(e){
+        
+        if(tallyTestButton.style.display === "none"){
+            tallyTestButton.style.display = "block";
+        }
+        else {
+            tallyTestButton.style.display = "none";
+        }
+        e.preventDefault();
+    }
+
+</script>

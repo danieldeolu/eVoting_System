@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<style>
+    .entireAdminPage:before{
+            content: '';
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            background-image:url('./vote.webp');
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            -webkit-filter: blur(2px);
+            -moz-filter: blur(2px);
+            -o-filter: blur(2px);
+            -ms-filter: blur(2px);
+            filter: blur(2px);
+        }
+        .adminOptionsButtons
+        {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 400px;
+            height: 500px;
+            padding: 80px 40px;
+            box-sizing: border-box;
+            background: rgba(0,0,0,.5);
+        }
+        
+        .adminOptionsButtons h2 {
+            
+            margin-top: -40px;
+            margin-bottom: 10px;
+            color: #fff;
+            text-align: center;   
+        }
+        .adminOptionsButtons p
+        {
+            margin: 0px;
+            padding: 0;
+            font-weight: bold;
+            color: #fff;
+        }
+        
+        .listOfButtons {
+            left: auto;
+            box-sizing: content-box;
+            margin-top: 20px;
+            margin-left: 20px;
+            
+        }
+
+        .listOfButtons button{
+            height: 40px;
+            color: #fff;
+            font-size: 15px;
+            background: green;
+            cursor: pointer;
+            border-radius: 25px;
+            border: none;
+            outline: none;
+            margin-top: 5%;
+            margin-left:50px;
+        }
+
+        
+
+        .listOfButtons button:hover{
+             
+            background: orange;
+           
+        }
+
+        .listOfButtons button:active{
+            background-color: #3e8e41;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+
+        .adminSignOutButton button{
+            height: 40px;
+            color: #fff;
+            font-size: 15px;
+            background: red;
+            cursor: pointer;
+            border-radius: 25px;
+            border: none;
+            outline: none;
+            margin-top: 5%;
+            margin-left:70px;
+        }
+
+        .adminSignOutButton button:active{
+            background-color: red;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+
+        .adminNewCampaignButton button{
+                margin-left: 69px;
+        }
+
+        .adminExistingCampaignButton{
+            margin-left: -20px;
+        }
+
+        .adminTallyButton{
+            margin-left: 35px;
+        }
+
+        .adminStopCampaignButton{
+            margin-left: 20px;
+        }
+
+        .adminSignOutButton{
+            margin-left: 23px;
+        }
+
+        .adminSignOutButton button:hover{
+
+            background: #FF0001;
+        }
+
+        marquee {
+            color: orange;
+            font-weight: bold;
+        }
+
+</style>
+<body>
+<div class="entireAdminPage">
+<div class="adminOptionsButtons">
+
+            <h2>Welcome, <b style="color: orange;">{{admin}}</b></h2>
+            <br/>
+            
+            <marquee style="text-align: center;" behavior="scroll" scrollamount="1"  height="30px" direction="down">Kindly note the following.</marquee>
+            <br/>
+           
+            <br/>
+            <p>1. Click on <b style="color: orange;">Start Campaign</b> to start a new campaign or to continue previous campaign</p>
+            <br/>
+            <p>2. Click on <b style="color: orange;">Stop Campaign</b> to end the current campaign and proceed to vote tallying.</p>
+            <br/>
+            
+
+<form action="/tallyVote" method="GET">
+        
+        <div class = "bitButtonAndInput">
+           
+        </div>
+
+         <div class="listOfButtons">
+           <div class="adminNewCampaignButton">
+                    
+        <label for="numberofvoters" style='color:white;'>Number of Voters:</label><input name="numberofvoters" type="number" id="myNumber" required>
+        <button id="numberofvoters" style='margin-left:90px' type="submit" formaction="/">Generate</button>
+        </div>
+
+                    
+                    
+                    <div class="adminStopCampaignButton">
+                    <button type="submit" formaction="/stop">Stop Campaign</button>
+                    </div>
+
+                    <div class="adminSignOutButton" >
+                    <button type="submit" formaction="/adminLogout">Sign Out</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+
+</body>
+</html>

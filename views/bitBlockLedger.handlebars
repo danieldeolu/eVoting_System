@@ -1,0 +1,414 @@
+<title>FUTMx e-Voting Ledger</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <style>
+
+        
+        {{!-- body {            
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        } --}}
+
+       
+        table{
+            border-collapse: collapse;
+            
+            margin: 25px 0;
+            margin-left: 60px;
+            font-size: 0.9em;
+            font-family: sans-serif;
+            min-width: 400px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        }
+    
+        table.center {
+            margin-left:auto; 
+            margin-right:auto;
+        }
+    
+        thead tr {
+            background-color: #009879;
+            color: #ffffff;
+            text-align: left;
+        }
+    
+        th, td {
+            padding: 12px 15px;
+        }
+    
+        tbody tr {
+            border-bottom: 1px solid #dddddd;
+        }
+    
+        tbody tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+        }
+    
+        tbody tr:last-of-type {
+            border-bottom: 2px solid #009879;
+        }
+    
+        tbody tr.active-row {
+            font-weight: bold;
+            color: #009879;
+        }
+
+        /* START OF COPIED STYLING */
+            .group{ 
+            position:relative; 
+            margin-bottom:45px; 
+            }
+
+            input{
+            
+            font-size:18px;
+            padding:10px 10px 10px 5px;
+            display:block;
+            width:300px;
+            margin: auto;
+            margin-top: 50px;
+            margin-bottom: 2px;
+            padding-bottom: 0px;
+            border-radius: 0px 10px 10px 0px ;
+            
+            border-bottom:4px solid #009879;
+            border-top: 4px solid #009879;
+            }
+
+            input:focus{ outline:none; }
+
+            label{
+            color:#999; 
+            font-size:18px;
+            font-weight:normal;
+            position:absolute;
+            pointer-events:none;
+            left:5px;
+            top:10px;
+            transition:0.2s ease all; 
+            -moz-transition:0.2s ease all; 
+            -webkit-transition:0.2s ease all;
+            }
+
+            /* active state */
+            input:focus ~ label, input:valid ~ label{
+            top:-20px;
+            font-size:14px;
+            color:#5264AE;
+            }
+
+            input:focus ~ .bar:before, input:focus ~ .bar:after {
+            width:50%;
+            }
+
+            /* HIGHLIGHTER ================================== */
+            .highlight {
+            position:absolute;
+            height:60%; 
+            width:100px; 
+            top:25%; 
+            left:0;
+            pointer-events:none;
+            opacity:0.5;
+            }
+
+            /* active state */
+            input:focus ~ .highlight {
+            -webkit-animation:inputHighlighter 0.3s ease;
+            -moz-animation:inputHighlighter 0.3s ease;
+            animation:inputHighlighter 0.3s ease;
+            }
+
+            @-webkit-keyframes inputHighlighter {
+                from { background:#5264AE; }
+            to 	{ width:0; background:transparent; }
+            }
+            @-moz-keyframes inputHighlighter {
+                from { background:#5264AE; }
+            to 	{ width:0; background:transparent; }
+            }
+            @keyframes inputHighlighter {
+                from { background:#5264AE; }
+            to 	{ width:0; background:transparent; }
+            }
+
+            /* End of search bar styling */
+        </style>
+
+        <div id="root"></div>
+        <script type="text/babel">
+
+        class TableData extends React.Component {
+
+        
+            
+
+            render(){
+            
+
+            //let myRequest = new Request(input[ , init]);
+
+            //console.log(myRequest)
+            //console.log("pay attention ...................")
+            //console.log(Request.method)
+            let result = [];
+            let serialNo = 1;
+            if(this.props.data != []){
+
+            let chainSender = null;
+            let chainReceiver = null;
+            let chainTransactionId = null;
+            let chainAmount = null
+            let chainAmountA= null;
+            let chainAmountB= null;
+            let chainAmountC= null;
+            let chainAmountD= null;
+            let chainAmountE= null;
+            let chainAmountF= null;
+
+            //console.log("inside the tabledata ")
+            //console.log(`${this.props.data}`)
+
+    result.push(...(this.props.data.map((item, index)=>{
+
+	let returnContainer = [];
+	chainTransactionId = "Genesis Block";
+
+
+
+    if(item.index == 1) {
+            return(<tr key ={item.index}>
+
+				<td>{index+1}</td>
+				<td>{item.timestamp}</td>
+				<td></td>
+				<td></td>
+				<td>>> Presidential: <br/>  [, ,].<br/><br/>
+                   >> Senatorial: <br/>  [, ,].</td>
+                 <td>{item.hash}</td>
+                 <td>Genesis Block</td> 
+			</tr>
+
+            )
+    }
+
+	else if(item.index !== 1){
+
+        
+		chainSender = item.transactions[0].sender;
+		chainReceiver = item.transactions[0].recipient;
+		chainTransactionId = item.transactions[0].transactionId;
+
+        //console.log(chainSender)
+        //console.log(chainReceiver);
+        //console.log(chainTransactionId)
+
+		let iteratingValue = (((item.transactions[0]).amount[0]).presidentalTotal).length
+		
+        //console.log(iteratingValue)
+
+		let presentPresidentialTotal = item.transactions[0].amount[0].presidentalTotal;
+        
+        
+		let presentSenatorialTotal = item.transactions[0].amount[1].senatorialTotal;
+
+        //console.log(presentSenatorialTotal)
+
+		for(let tym=0; tym<iteratingValue; tym++){
+
+            serialNo++
+			let chainAmountA = presentPresidentialTotal[tym].ballot1;
+			let chainAmountB = presentPresidentialTotal[tym].ballot2;
+			let chainAmountC = presentPresidentialTotal[tym].ballot3;
+
+			let chainAmountD = presentSenatorialTotal[tym].ballot1;
+			let chainAmountE = presentSenatorialTotal[tym].ballot2;
+			let chainAmountF = presentSenatorialTotal[tym].ballot3;
+
+			
+
+			returnContainer.push(<tr key ={tym}>
+
+				<td>{serialNo}</td>
+				<td>{item.timestamp}</td>
+				<td>{chainSender}</td>
+				<td>{chainReceiver}</td>
+				<td>>> Presidential: <br/>  [{chainAmountA}, {chainAmountB}, {chainAmountC}].<br/><br/>
+                   >> Senatorial: <br/>  [{chainAmountD}, {chainAmountE}, {chainAmountF}].</td>
+                 <td>{item.hash}</td>
+                 <td>{chainTransactionId}</td> 
+			</tr>);
+
+		}
+
+            //console.log(returnContainer)
+
+	}
+
+	return (returnContainer)
+})))
+
+                return(
+                    <tbody>
+                        {result}
+                    </tbody>
+                )
+    }
+
+            // else if(this.props.data == []){
+             if(!this.props.data) {
+                return (<tbody>
+                    <tr>
+                        <td>Loading...</td>
+                        <td>Loading...</td>
+                        <td>Loading...</td>
+                        <td>Loading...</td>
+                        <td>Loading...</td>
+                        <td>Loading...</td>
+                        <td>Loading...</td>
+                    </tr>
+                </tbody>)
+            }
+
+            if(this.props.data == []){
+               
+                return (<tbody>
+                    <tr>
+                        <td>Loading...</td>
+                        <td>Loading...</td>
+                        <td>Loading...</td>
+                        <td>Loading...</td>
+                        <td>Loading...</td>
+                        <td>Loading...</td>
+                        <td>Loading...</td>
+                    </tr>
+                </tbody>)
+            
+            }
+            }
+
+        }   
+
+        
+        class Table extends React.Component {
+            
+        constructor(props){
+            super(props);
+
+            this.state = {
+                loading: false,
+                fetchedChain: null,
+                returnReceipt: [], 
+                searchTerm : ''
+            }
+
+
+            this.editSearchTerm = this.editSearchTerm.bind(this);
+            this.dynamicSearch = this.dynamicSearch.bind(this);
+
+        }
+
+
+            editSearchTerm = (e)=>{
+                this.setState({
+                    searchTerm : e.target.value
+                })
+            }
+
+
+            dynamicSearch = () => {
+
+                let returnResult = [];
+                if(this.state.fetchedChain != null && this.state.searchTerm != null) {
+                    this.state.fetchedChain.map((item, index)=>{
+                    
+                    if(index != 0){
+                       if(((item.transactions[0].sender).toLowerCase()).includes(this.state.searchTerm.toLowerCase())){
+                        returnResult.push(item)
+                       }
+                    }
+                    })
+                }
+
+                if(this.state.searchTerm === '' && this.state.fetchedChain != null){
+                    returnResult = this.state.fetchedChain
+                }
+                
+                return returnResult;
+            }
+            
+
+            async componentDidMount(){
+
+                //const url = "https://api.randomuser.me/";
+                //let fetchResult = null;
+                const proxyurl = "https://cors-anywhere.herokuapp.com/";
+                //const updateChainUrl = "http://127.0.0.1/updatechain" //call this endpoint to make the blockchain update itself from the back-end DB
+                const url = "http://127.0.0.1:3002/bitTest"
+                //const url = "https://cpeblockchainvoting.herokuapp.com/bitTest"
+                //let fetchJSON = await fetch(proxyurl+url)
+
+                //let fetchUpdateChain = await fetch(updateChainUrl);
+
+                let fetchJSON = await fetch(url)
+                let fetchResult = await fetchJSON.json();
+                
+                 
+                //console.log(fetchResult.chain, 'is the result of the fetching')
+                await this.setState({fetchedChain: fetchResult.chain})
+                
+                if (this.state.searchTerm == "null" && this.state.fetchedChain != null){
+                    //console.log("Inside the component Did Mount")
+                    this.setState({
+                    returnReceipt: this.state.fetchedChain
+                    })
+                }
+                
+            }
+
+            render(){
+                
+                
+                return(
+                <div>
+
+                    <div className="group">      
+                    <input type="text" value={this.state.searchTerm} onChange = {this.editSearchTerm} placeholder="Enter your voter ID here!"/>
+                    <span className="highlight"></span>
+                    <span className="bar"></span>
+                    
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>S/N</th>
+                                <th>Timestamp</th>
+                                <th>Sender</th>
+                                <th>Recipient</th>
+                                <th>Ballot</th>
+                                <th>Hash</th>
+                                <th>Transaction Id</th>
+                            </tr>
+                        </thead>
+
+                        {
+                            //console.log("Inside the table class", this.state.fetchedChain)
+                    }
+                        <TableData data = {this.dynamicSearch()}/>
+                        
+                    </table>
+                </div>
+                )
+            }
+            }
+        
+    
+        ReactDOM.render(
+
+            <Table />, document.querySelector("#root")
+        )
+        
+        
+        </script>

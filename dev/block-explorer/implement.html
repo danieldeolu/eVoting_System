@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+    <style>
+    table{
+        border-collapse: collapse;
+        
+        margin: 25px 0;
+        font-size: 0.9em;
+        font-family: sans-serif;
+        min-width: 400px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    }
+
+    table.center {
+        margin-left:auto; 
+        margin-right:auto;
+    }
+
+    thead tr {
+        background-color: #009879;
+        color: #ffffff;
+        text-align: left;
+    }
+
+    th, td {
+        padding: 12px 15px;
+    }
+
+    tbody tr {
+        border-bottom: 1px solid #dddddd;
+    }
+
+    tbody tr:nth-of-type(even) {
+        background-color: #f3f3f3;
+    }
+
+    tbody tr:last-of-type {
+        border-bottom: 2px solid #009879;
+    }
+
+    tbody tr.active-row {
+        font-weight: bold;
+        color: #009879;
+    }
+    </style>
+</head>
+<body>
+    
+    <div id="root"></div>
+
+
+    <script type="text/babel">
+
+    let container = document.querySelector("#root");
+    
+    let blockData = [
+
+    {"index":1,"timestamp":1607477259535,"transactions":[],"nonce":0,"hash":"0","previousBlockHash":"0"},
+
+
+    {"index":2,"timestamp":1607477496911,"transactions":[{"amount":["5533178684796717271","7186910831019085190","5402737856868437417","1899733722208545905","1984502373390920153","610218556928642099"],"sender":"Daniel","recipient":"Admin","transactionId":"464d1b8039be11eb9ea7bb51ecc6de4a"}],"nonce":8991,"hash":"00060fc7e7320698a80f7ad9eb5181a2189cb13880d1e2e109cfc4b596d082eb","previousBlockHash":"0"},
+
+    {"index":3,"timestamp":1607477549131,"transactions":[{"amount":["7309308545788249583","2556079157434562141","396113283632603564","4178023325570540225","2655598328527508405","5195018179329448462"],"sender":"Fred","recipient":"Admin","transactionId":"65bbad6039be11eb9ea7bb51ecc6de4a"}],"nonce":3890,"hash":"0000d4b74688fafff4a98a32365d5cdbaee4ed1661a93e0cb3910b9176029c9b","previousBlockHash":"00060fc7e7320698a80f7ad9eb5181a2189cb13880d1e2e109cfc4b596d082eb"},
+
+    {"index":4,"timestamp":1607477986250,"transactions":[{"amount":["5050319467978799091","3790876676739619172","4966549989139612733","4685666776817941252","1594140059597975168","3150971652477861775"],"sender":"0x00FUTMCPE150d6110","recipient":"Admin","transactionId":"6b08128039bf11eb9ea7bb51ecc6de4a"}],"nonce":222,"hash":"00036b87bdb27a7faa28aa9923c5b409f6ee8a3286f0652f3771c6897e3be0f0","previousBlockHash":"0000d4b74688fafff4a98a32365d5cdbaee4ed1661a93e0cb3910b9176029c9b"},
+
+    {"index":5,"timestamp":1607478941235,"transactions":[{"amount":["3454877879816042903","2060037049038171325","7189123987206733831","3081796116839324677","3603596555166601442","2591287731063822781"],"sender":"0x00FUTMCPE606f92cc","recipient":"Admin","transactionId":"a421ec1039c111eb9ea7bb51ecc6de4a"}],"nonce":2803,"hash":"00085d2dcaa548ad85881db2af15e48d2c1003a8f33155970835a40dea2b0a22","previousBlockHash":"00036b87bdb27a7faa28aa9923c5b409f6ee8a3286f0652f3771c6897e3be0f0"},
+
+    {"index":6,"timestamp":1607483439695,"transactions":[{"amount":["855699530641465431","5596007788739765294","4629276898858988712","2345005162255802870","3534771169421792405","529398615990515025"],"sender":"0x00FUTMCPEe8e2c7d0","recipient":"Admin","transactionId":"1d743a0039cc11ebbb614b027cefb4ee"}],"nonce":1035,"hash":"000ed4f1d272e31e0e9e893c1cc1454b9e7dda70e2686a314482c13511f7d631","previousBlockHash":"00085d2dcaa548ad85881db2af15e48d2c1003a8f33155970835a40dea2b0a22"},
+
+    {"index":7,"timestamp":1607509899003,
+    "transactions":
+    [
+        { "amount":["6697400669682692640","1284929459629838792","3900058453852804017","2365778920002574929","606018899815581791","4412245596748079629"],"sender":"0x00FUTMCPEe8e2c7d0","recipient":"Admin","transactionId":"b824aca03a0911eba5c8fddbc575ccc4"
+    }
+    ],"nonce":2088,"hash":"000f280af1ec6b0b7361901c86bb379e2fe79ceef1e7fa5652e397961a456de8","previousBlockHash":"000ed4f1d272e31e0e9e893c1cc1454b9e7dda70e2686a314482c13511f7d631"}
+    ]
+    
+    class TableData extends React.Component {
+
+        render(){
+        
+        let chainSender = null;
+        let chainReceiver = null;
+        let chainTransactionId = null;
+        let chainAmount = null
+        let chainAmountA= null;
+        let chainAmountB= null;
+        let chainAmountC= null;
+        let chainAmountD= null;
+        let chainAmountE= null;
+        let chainAmountF= null;
+
+        let result =   this.props.data.map((item, index)=>{
+
+                chainTransactionId = "Genesis Block"
+        
+                for(let tyw=0;tyw<item.transactions.length;tyw++){
+                    //console.log(item.transactions[tyw].sender)
+                    chainSender = item.transactions[tyw].sender
+                    chainReceiver= item.transactions[tyw].recipient
+                    
+                    if(item.transactions == []){ chainTransactionId = "Genesis Block"
+                    
+                    console.log("transaction id is genesis block")        
+                }   
+                else chainTransactionId = item.transactions[tyw].transactionId;
+                    chainAmountA = item.transactions[tyw].amount[0];
+                    chainAmountB = item.transactions[tyw].amount[1];
+                    chainAmountC = item.transactions[tyw].amount[2];
+                    chainAmountD = item.transactions[tyw].amount[3];
+                    chainAmountE = item.transactions[tyw].amount[4];
+                    chainAmountF = item.transactions[tyw].amount[5];
+                }
+
+               
+
+                
+                
+
+                return(<tr key={index}>
+                    <td>{index+1}</td>
+                    
+                    <td>{item.timestamp}</td>
+                    <td>{chainSender}</td>
+                    <td>{chainReceiver}</td>
+                    <td>>> Presidential: <br/>  [{chainAmountA}, {chainAmountB}, {chainAmountC}].<br/><br/>
+                        >> Senatorial: <br/>  [{chainAmountD}, {chainAmountE}, {chainAmountF}]</td>
+                    <td>{item.hash}</td>
+                    <td>{chainTransactionId}</td>
+                    
+                </tr>)
+            })
+        
+        //console.log(this.props.data)
+
+            return(
+                <tbody>
+                    {result}
+                </tbody>
+            )
+        }
+
+    }   
+    
+    class Table extends React.Component {
+
+        render(){
+            
+            
+            return(
+                <table>
+                    <thead>
+                        <tr>
+                            <th>S/N</th>
+                            <th>Timestamp</th>
+                            <th>Sender</th>
+                            <th>Recipient</th>
+                            <th>Ballot</th>
+                            <th>Hash</th>
+                            <th>Transaction Id</th>
+                        </tr>
+                    </thead>
+
+                    <TableData data =  {blockData}/>
+                </table>)
+        }
+    }
+
+    ReactDOM.render(
+        <Table/>, root
+    )
+
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+admin
+alreadyVoted
+bitTestUser
+chainBackup
+sampleChain
+stopVotingFlag
+theChain
+users

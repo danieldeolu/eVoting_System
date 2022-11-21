@@ -1,0 +1,184 @@
+
+        <div id="root"></div>
+        <script type="text/babel">
+
+        class TableData extends React.Component {
+
+            render(){
+            
+            if(this.props.data != null){
+
+            let chainSender = null;
+            let chainReceiver = null;
+            let chainTransactionId = null;
+            let chainAmount = null
+            let chainAmountA= null;
+            let chainAmountB= null;
+            let chainAmountC= null;
+            let chainAmountD= null;
+            let chainAmountE= null;
+            let chainAmountF= null;
+
+            let result =   this.props.data.map((item, index)=>{
+
+                    chainTransactionId = "Genesis Block"
+
+                    for(let tyw=0;tyw<item.transactions.length;tyw++){
+                        //console.log(item.transactions[tyw].sender)
+                        chainSender = item.transactions[tyw].sender
+                        chainReceiver= item.transactions[tyw].recipient
+                        
+                        if(item.transactions == []){ chainTransactionId = "Genesis Block"
+                        
+                        console.log("transaction id is genesis block")        
+                    }   
+                    else chainTransactionId = item.transactions[tyw].transactionId;
+                        chainAmountA = item.transactions[tyw].amount[0];
+                        chainAmountB = item.transactions[tyw].amount[1];
+                        chainAmountC = item.transactions[tyw].amount[2];
+                        chainAmountD = item.transactions[tyw].amount[3];
+                        chainAmountE = item.transactions[tyw].amount[4];
+                        chainAmountF = item.transactions[tyw].amount[5];
+                    }
+
+                
+
+                    
+                    
+
+                    return(<tr key={index}>
+                        <td>{index+1}</td>
+                        
+                        <td>{item.timestamp}</td>
+                        <td>{chainSender}</td>
+                        <td>{chainReceiver}</td>
+                        <td>>> Presidential: <br/>  [{chainAmountA}, {chainAmountB}, {chainAmountC}].<br/><br/>
+                            >> Senatorial: <br/>  [{chainAmountD}, {chainAmountE}, {chainAmountF}]</td>
+                        <td>{item.hash}</td>
+                        <td>{chainTransactionId}</td>
+                        
+                    </tr>)
+                })
+
+            
+
+                return(
+                    <tbody>
+                        {result}
+                    </tbody>
+                )
+            }
+            else 
+                return (<tbody>
+                    <tr>
+                        <td>Loading...</td>
+                        <td>Loading...</td>
+                        <td>Loading...</td>
+                        <td>Loading...</td>
+                        <td>Loading...</td>
+                        <td>Loading...</td>
+                        <td>Loading...</td>
+                    </tr>
+                </tbody>)
+            }
+
+            }   
+
+            class Table extends React.Component {
+            
+                constructor(props){
+            super(props);
+            this.state = {
+                loading: false,
+                person: null
+            }
+
+
+            
+        }
+            
+
+            async componentDidMount(){
+                //const url = "https://api.randomuser.me/";
+                //let fetchResult = null;
+                const proxyurl = "https://cors-anywhere.herokuapp.com/";
+                const url = "https://cpemachines.herokuapp.com/"
+                let fetchJSON = await fetch(proxyurl+url)
+                let fetchResult = await fetchJSON.json();
+                
+                 
+                console.log(fetchResult.chain, 'is the result of the fetching')
+                await this.setState({person: fetchResult.chain})
+
+                
+            }
+
+            render(){
+                
+                
+                return(
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>S/N</th>
+                                <th>Timestamp</th>
+                                <th>Sender</th>
+                                <th>Recipient</th>
+                                <th>Ballot</th>
+                                <th>Hash</th>
+                                <th>Transaction Id</th>
+                            </tr>
+                        </thead>
+
+                        {console.log("Inside the table class", this.state.person)}
+                        <TableData data = {this.state.person}/>
+                        
+                        
+                    </table>)
+            }
+            }
+        
+        class FetchRandomUser extends React.Component{
+        
+        constructor(props){
+            super(props);
+            this.state = {
+                loading: false,
+                person: null
+            }
+
+
+            
+        }
+            
+
+            async componentDidMount(){
+                //const url = "https://api.randomuser.me/";
+                //let fetchResult = null;
+                const proxyurl = "https://cors-anywhere.herokuapp.com/";
+                const url = "https://cpemachines.herokuapp.com/"
+                let fetchJSON = await fetch(proxyurl+url)
+                let fetchResult = await fetchJSON.json();
+                
+                 
+                console.log(fetchResult.chain, 'is the result of the fetching')
+                this.setState({person: fetchResult.chain})
+
+                
+            }
+
+            render(){
+                return (
+                    <Table blockData = {this.state.person} />
+                );
+            } 
+        }
+
+
+        ReactDOM.render(
+
+            <Table />, document.querySelector("#root")
+        )
+        
+        
+        </script>
