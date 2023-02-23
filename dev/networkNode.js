@@ -1309,7 +1309,7 @@ app.get('/voterSignUp', function(req, res){
 //end point to send registration confirmation mail to the voter
 app.post('/registrationConfirm', async function(req, res){
     
-    blockchainView = "https://cpemachines.herokuapp.com/blockledger"
+    blockchainView = "https://cpemachines.onrender.com/blockledger"
     email1 = "Dear, "+ req.body.name;
     email2 = "\nThanks for registering. Please note that your voter id is:\n"+ req.body.id;
     email3 = "\nPlease Note: \n After casting your ballot, you will receive a receipt containing a ciphered(encrypted) form of your ballot (for your privacy)."
@@ -2416,7 +2416,7 @@ app.get('/sendMail', async function(req, res){
        
 //    }
 
-let ledgerLink = "https://cpemachines.herokuapp.com/blockledger"
+let ledgerLink = "https://cpemachines.onrender.com/blockledger"
 
     
     emailn1 = "Thanks for exercising your civic duty.\n"
