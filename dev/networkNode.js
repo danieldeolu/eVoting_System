@@ -2487,7 +2487,7 @@ let ledgerLink = "https://cpemachines.onrender.com/blockledger"
         service: 'gmail', 
         auth : {
             user: "cpemachines@gmail.com", 
-            pass : "VYNEaTaRdmVt_9-"
+            pass : "orkdmyhghemdpfqo"
         }
     });
 
