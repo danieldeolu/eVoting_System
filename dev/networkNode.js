@@ -2481,12 +2481,13 @@ let ledgerLink = "https://cpemachines.onrender.com/blockledger"
     //let designedEmail = "<body style='background-image: linear-gradient(green, white);'>"+hemailhtml +"</body>"
     
     let adb = "<p style='font-weight:bold;>"+emailVoterID+"</p>"
-
+    console.log("Trying the new password")
+    //pass : "fuyhkuuxxeuwvmqh"
     var transporter = nodemailer.createTransport({
         service: 'gmail', 
         auth : {
             user: "cpemachines@gmail.com", 
-            pass : "fuyhkuuxxeuwvmqh"
+            pass : "VYNEaTaRdmVt_9-"
         }
     });
 
